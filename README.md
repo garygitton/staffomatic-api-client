@@ -12,4 +12,4 @@ PHP Client for Staffomatic API.
 
 ## Dependency
 - Guzzle
-
+- Zend Hydrator
