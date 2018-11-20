@@ -1,13 +1,12 @@
 # Staffomatic Api Client
 PHP Client for Staffomatic API.
 
-
-## Compatibility
+## Compatibility
 - Symfony 4
 - Zend Framework 3
 
 
-## Standard
+## Standard
 - PSR-11: Container Interface
 
 ## Dependency
