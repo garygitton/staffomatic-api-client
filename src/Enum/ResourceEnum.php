@@ -19,4 +19,22 @@ class ResourceEnum
     const SPECIAL_DAY = 'special day';
     const USER = 'user';
     const WORK_TIMER = 'work timer';
+
+    public static $values = [
+        self::ABSENCE_TYPE,
+        self::ABSENCE,
+        self::ACCOUNT,
+        self::BREAK_TIMER,
+        self::DEPARTMENT,
+        self::EVENT,
+        self::FORM_FIELD,
+        self::LOCATION,
+        self::NEWS_ITEM,
+        self::NOTIFICATION_SETTING,
+        self::SCHEDULE,
+        self::SHIFT,
+        self::SPECIAL_DAY,
+        self::USER,
+        self::WORK_TIMER
+    ];
 }
