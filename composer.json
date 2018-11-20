@@ -6,7 +6,8 @@
   "require": {
     "php": ">=7.1",
     "ext-curl": "*",
-    "league/period": "^3.4"
+    "league/period": "^3.4",
+    "zendframework/zend-hydrator": "^2.4"
   },
   "autoload": {
     "psr-4": {
