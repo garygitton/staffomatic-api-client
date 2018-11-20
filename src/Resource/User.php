@@ -147,34 +147,9 @@ class User
      */
     private $customId;
 
-    public function getCreatedAt(): ?\DateTime
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTime $createdAt)
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    public function getUpdatedAt(): ?\DateTime
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTime $updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-    }
-
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
-    }
-
-    public function setId(int $id)
-    {
-        $this->id = $id;
     }
 
     public function getEmail(): ?string
@@ -436,7 +411,5 @@ class User
     {
         $this->customId = $customId;
     }
-
-
 }
 
