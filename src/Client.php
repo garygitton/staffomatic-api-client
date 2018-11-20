@@ -84,6 +84,27 @@ class Client
         return $resources;
     }
 
+    public function postResource($path, $data)
+    {
+        $result = $this->guzzleClient->post($this->baseUrl . $path);
+
+        return $result;
+    }
+
+    public function putResource($path, $body)
+    {
+        $result = $this->guzzleClient->put($this->baseUrl . $path);
+
+        return $result;
+    }
+
+    public function deleteResource($path)
+    {
+        $result = $this->guzzleClient->delete($this->baseUrl . $path);
+
+        return $result;
+    }
+
     private function serializeParams(array $params = [])
     {
         foreach ($params as $key => $param) {

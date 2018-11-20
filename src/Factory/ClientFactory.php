@@ -4,9 +4,7 @@ namespace Staffomatic\Api\Client\Factory;
 use GuzzleHttp\Client as GuzzleClient;
 use Psr\Container\ContainerInterface;
 use Staffomatic\Api\Client\Client;
-use Zend\Hydrator\ArraySerializable;
 use Zend\Hydrator\ClassMethods;
-use Zend\Hydrator\Strategy\DateTimeFormatterStrategy;
 
 class ClientFactory
 {
@@ -28,12 +26,10 @@ class ClientFactory
             ]
         ]);
 
-        $hydrator = new ClassMethods();
-
         return new Client(
             $baseUrl,
             $guzzleClient,
-            $hydrator
+            new ClassMethods()
         );
     }
 }
