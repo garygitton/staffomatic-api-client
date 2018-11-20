@@ -84,6 +84,11 @@ class Shift
         return $this->id;
     }
 
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
     public function getDesiredCoverage(): ?int
     {
         return $this->desiredCoverage;

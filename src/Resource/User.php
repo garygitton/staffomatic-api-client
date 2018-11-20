@@ -147,9 +147,14 @@ class User
      */
     private $customId;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(int $id)
+    {
+        $this->id = $id;
     }
 
     public function getEmail(): ?string
