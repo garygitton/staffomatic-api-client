@@ -2,6 +2,7 @@
 namespace Staffomatic\Api\Client;
 
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\RequestOptions;
 use Staffomatic\Api\Client\Resource\Absence;
 use Staffomatic\Api\Client\Resource\AbsenceType;
 use Staffomatic\Api\Client\Resource\Account;
@@ -51,7 +52,7 @@ class Client
     public function getResource($path, $queryParams = [])
     {
         $options = [
-            'query' => $this->serializeParams($queryParams)
+            RequestOptions::QUERY => $this->serializeParams($queryParams)
         ];
 
         $result = $this->guzzleClient->get($this->baseUrl . $path, $options);
@@ -67,7 +68,7 @@ class Client
     public function listResource($path, $queryParams = [])
     {
         $options = [
-            'query' => $this->serializeParams($queryParams)
+            RequestOptions::QUERY => $this->serializeParams($queryParams)
         ];
 
         $result = $this->guzzleClient->get($this->baseUrl . $path, $options);
@@ -84,18 +85,38 @@ class Client
         return $resources;
     }
 
-    public function postResource($path, $data)
+    public function postResource($path, $body)
     {
-        $result = $this->guzzleClient->post($this->baseUrl . $path);
+        if(is_object($body)) {
+            $body = $this->hydrator->extract($body);
+        }
 
-        return $result;
+        $options = [
+            RequestOptions::BODY => $body
+        ];
+
+        $result = $this->guzzleClient->post($this->baseUrl . $path, $options);
+        $content = $result->getBody()->getContents();
+        $body = json_decode($content, true);
+
+        return $body;
     }
 
     public function putResource($path, $body)
     {
-        $result = $this->guzzleClient->put($this->baseUrl . $path);
+        if(is_object($body)) {
+            $body = $this->hydrator->extract($body);
+        }
 
-        return $result;
+        $options = [
+            RequestOptions::BODY => $body
+        ];
+
+        $result = $this->guzzleClient->put($this->baseUrl . $path, $options);
+        $content = $result->getBody()->getContents();
+        $body = json_decode($content, true);
+
+        return $body;
     }
 
     public function deleteResource($path)
