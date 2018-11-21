@@ -33,6 +33,17 @@ class ShiftService
         ]);
     }
 
+    public function listShiftByLocationFor1Month(int $locationId)
+    {
+        $now = new \DateTime();
+        $nowPlusOneMonth = (clone $now)->add(\DateInterval::createFromDateString('1 months'));
+
+        return $this->client->listResource('/locations/'.$locationId.'/shifts.json', [
+            'from' => $now,
+            'until' => $nowPlusOneMonth
+        ]);
+    }
+
     public function listShiftByPeriod(Period $period)
     {
         return $this->client->listResource('/shifts.json', [
