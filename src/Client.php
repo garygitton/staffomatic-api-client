@@ -79,7 +79,7 @@ class Client
 
         $resources = [];
         foreach ($dataRows as $data) {
-            $resources[] = $this->hydrator->hydrate($data, $resource);
+            $resources[] = $this->hydrator->hydrate($data, clone $resource);
         }
 
         return $resources;
