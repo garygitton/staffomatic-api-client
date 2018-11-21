@@ -47,6 +47,7 @@ class Client
         $this->hydrator->addStrategy('deadline', $dateTimeFormatterStrategy);
         $this->hydrator->addStrategy('application_starts_at', $dateTimeFormatterStrategy);
         $this->hydrator->addStrategy('application_ends_at', $dateTimeFormatterStrategy);
+        $this->hydrator->addStrategy('locked_at', $dateTimeFormatterStrategy);
     }
 
     public function getResource($path, $queryParams = [])
