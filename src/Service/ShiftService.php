@@ -3,6 +3,7 @@ namespace Staffomatic\Api\Client\Service;
 
 use League\Period\Period;
 use Staffomatic\Api\Client\Client;
+use Staffomatic\Api\Client\Resource\Shift;
 
 class ShiftService
 {
@@ -52,9 +53,16 @@ class ShiftService
         return $this->client->getResource('/schedules/'.$scheduleId.'/shifts/'.$shiftId.'/.json');
     }
 
-    public function updateShiftByScheduleAndShift(int $scheduleId, int $shiftId)
+    public function addShiftToSchedule(int $scheduleId, Shift $shift)
     {
-        return $this->client->putResource('/schedules/'.$scheduleId.'/shifts/'.$shiftId.'/.json');
+        return $this->client->postResource('/schedules/'.$scheduleId.'/shifts.json', $shift);
+    }
+
+    public function updateShiftByScheduleAndShift(int $scheduleId, Shift $shift)
+    {
+        $shiftId = $shift->getId();
+
+        return $this->client->putResource('/schedules/'.$scheduleId.'/shifts/'.$shiftId.'/.json', $shift);
     }
 
     public function deleteShiftByScheduleAndShift(int $scheduleId, int $shiftId)
