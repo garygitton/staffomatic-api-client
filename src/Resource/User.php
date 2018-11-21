@@ -152,7 +152,7 @@ class User
         return $this->id;
     }
 
-    public function setId(int $id)
+    public function setId(?int $id)
     {
         $this->id = $id;
     }
@@ -162,7 +162,7 @@ class User
         return $this->email;
     }
 
-    public function setEmail(string $email)
+    public function setEmail(?string $email)
     {
         $this->email = $email;
     }
@@ -172,7 +172,7 @@ class User
         return $this->firstName;
     }
 
-    public function setFirstName(string $firstName)
+    public function setFirstName(?string $firstName)
     {
         $this->firstName = $firstName;
     }
@@ -182,7 +182,7 @@ class User
         return $this->lastName;
     }
 
-    public function setLastName(string $lastName)
+    public function setLastName(?string $lastName)
     {
         $this->lastName = $lastName;
     }
@@ -192,7 +192,7 @@ class User
         return $this->locale;
     }
 
-    public function setLocale(string $locale)
+    public function setLocale(?string $locale)
     {
         $this->locale = $locale;
     }
@@ -202,7 +202,7 @@ class User
         return $this->role;
     }
 
-    public function setRole(string $role)
+    public function setRole(?string $role)
     {
         $this->role = $role;
     }
@@ -212,7 +212,7 @@ class User
         return $this->image;
     }
 
-    public function setImage(string $image)
+    public function setImage(?string $image)
     {
         $this->image = $image;
     }
@@ -222,7 +222,7 @@ class User
         return $this->phoneNumberMobile;
     }
 
-    public function setPhoneNumberMobile(string $phoneNumberMobile)
+    public function setPhoneNumberMobile(?string $phoneNumberMobile)
     {
         $this->phoneNumberMobile = $phoneNumberMobile;
     }
@@ -232,7 +232,7 @@ class User
         return $this->phoneNumberOffice;
     }
 
-    public function setPhoneNumberOffice(string $phoneNumberOffice)
+    public function setPhoneNumberOffice(?string $phoneNumberOffice)
     {
         $this->phoneNumberOffice = $phoneNumberOffice;
     }
@@ -242,7 +242,7 @@ class User
         return $this->company;
     }
 
-    public function setCompany(string $company)
+    public function setCompany(?string $company)
     {
         $this->company = $company;
     }
@@ -252,7 +252,7 @@ class User
         return $this->street;
     }
 
-    public function setStreet(string $street)
+    public function setStreet(?string $street)
     {
         $this->street = $street;
     }
@@ -262,7 +262,7 @@ class User
         return $this->additionalStreet;
     }
 
-    public function setAdditionalStreet(string $additionalStreet)
+    public function setAdditionalStreet(?string $additionalStreet)
     {
         $this->additionalStreet = $additionalStreet;
     }
@@ -272,7 +272,7 @@ class User
         return $this->zip;
     }
 
-    public function setZip(string $zip)
+    public function setZip(?string $zip)
     {
         $this->zip = $zip;
     }
@@ -282,7 +282,7 @@ class User
         return $this->city;
     }
 
-    public function setCity(string $city)
+    public function setCity(?string $city)
     {
         $this->city = $city;
     }
@@ -292,7 +292,7 @@ class User
         return $this->country;
     }
 
-    public function setCountry(string $country)
+    public function setCountry(?string $country)
     {
         $this->country = $country;
     }
@@ -302,7 +302,7 @@ class User
         return $this->maxVacationDays;
     }
 
-    public function setMaxVacationDays(int $maxVacationDays)
+    public function setMaxVacationDays(?int $maxVacationDays)
     {
         $this->maxVacationDays = $maxVacationDays;
     }
@@ -312,7 +312,7 @@ class User
         return $this->commentCounts;
     }
 
-    public function setCommentCounts(int $commentCounts)
+    public function setCommentCounts(?int $commentCounts)
     {
         $this->commentCounts = $commentCounts;
     }
@@ -322,7 +322,7 @@ class User
         return $this->attachmentCounts;
     }
 
-    public function setAttachmentCounts(int $attachmentCounts)
+    public function setAttachmentCounts(?int $attachmentCounts)
     {
         $this->attachmentCounts = $attachmentCounts;
     }
@@ -332,7 +332,7 @@ class User
         return $this->commentable;
     }
 
-    public function setCommentable(bool $commentable)
+    public function setCommentable(?bool $commentable)
     {
         $this->commentable = $commentable;
     }
@@ -342,7 +342,7 @@ class User
         return $this->attachable;
     }
 
-    public function setAttachable(bool $attachable)
+    public function setAttachable(?bool $attachable)
     {
         $this->attachable = $attachable;
     }
@@ -352,7 +352,7 @@ class User
         return $this->approvedAbsencesHours;
     }
 
-    public function setApprovedAbsencesHours(int $approvedAbsencesHours)
+    public function setApprovedAbsencesHours(?int $approvedAbsencesHours)
     {
         $this->approvedAbsencesHours = $approvedAbsencesHours;
     }
@@ -362,7 +362,7 @@ class User
         return $this->maxHoursPerMonth;
     }
 
-    public function setMaxHoursPerMonth(int $maxHoursPerMonth)
+    public function setMaxHoursPerMonth(?int $maxHoursPerMonth)
     {
         $this->maxHoursPerMonth = $maxHoursPerMonth;
     }
@@ -382,7 +382,7 @@ class User
         return $this->lockedAt;
     }
 
-    public function setLockedAt(\DateTimeInterface $lockedAt)
+    public function setLockedAt(?\DateTimeInterface $lockedAt = null)
     {
         $this->lockedAt = $lockedAt;
     }
@@ -392,7 +392,7 @@ class User
         return $this->invitedById;
     }
 
-    public function setInvitedById(int $invitedById)
+    public function setInvitedById(?int $invitedById)
     {
         $this->invitedById = $invitedById;
     }
@@ -402,7 +402,7 @@ class User
         return $this->invitationState;
     }
 
-    public function setInvitationState(string $invitationState)
+    public function setInvitationState(?string $invitationState)
     {
         $this->invitationState = $invitationState;
     }
@@ -412,7 +412,7 @@ class User
         return $this->customId;
     }
 
-    public function setCustomId(string $customId)
+    public function setCustomId(?string $customId)
     {
         $this->customId = $customId;
     }
