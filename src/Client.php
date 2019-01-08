@@ -80,6 +80,7 @@ class Client
 
         $resources = [];
         foreach ($dataRows as $data) {
+            $data = $this->filterArrayEmptyToNull($data);
             $resources[] = $this->hydrator->hydrate($data, clone $resource);
         }
 
@@ -185,5 +186,16 @@ class Client
         $resource = $mapPartToResource[$part];
 
         return $resource;
+    }
+
+    public function filterArrayEmptyToNull(array $data): array
+    {
+        foreach($data as &$datum) {
+            if($datum === '') {
+                $datum = null;
+            }
+        }
+
+        return $data;
     }
 }
