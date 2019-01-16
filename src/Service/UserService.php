@@ -41,7 +41,7 @@ class UserService
 
     public function getUserByLocationAndUser(int $locationId, int $userId)
     {
-        return $this->client->getResource('/locations/' . $locationId . '/users/' . $userId . '/.json');
+        return $this->client->getResource('/locations/' . $locationId . '/users/' . $userId . '.json');
     }
 
     public function inviteUserToLocation(
