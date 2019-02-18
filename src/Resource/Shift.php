@@ -104,7 +104,7 @@ class Shift
         return $this->note;
     }
 
-    public function setNote(string $note)
+    public function setNote(? string $note)
     {
         $this->note = $note;
     }
